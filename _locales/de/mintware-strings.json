@@ -7,6 +7,6 @@
   "mintware.stopServo|block": "Servo an %pin stoppen",
   "mintware.setGroup|block": "Funkgruppe %group verwenden",
   "mintware.sendValue|block": "sende Wert %value",
-  "mintware.onReceivedValue|block": "wenn Wert empfangen"
+  "mintware.onReceivedValue|block": "wenn Wert empfangen",
   "mintware.onReceivedValue|handlerParam|value": "Wert"
 }

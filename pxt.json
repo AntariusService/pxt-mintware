@@ -1,6 +1,6 @@
 {
     "name": "mintware",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "MINTware blocks for servos and radio",
     "dependencies": {
         "core": "*",
@@ -9,6 +9,7 @@
     "files": [
         "README.md",
         "main.ts",
+        "pxtparts.json",
         "_locales/de/mintware-strings.json",
         "_locales/de/mintware-jsdoc-strings.json",
         "_locales/fr/mintware-strings.json",

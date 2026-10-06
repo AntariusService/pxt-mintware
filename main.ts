@@ -52,12 +52,14 @@ namespace mintware {
      * @param angle angle from 0 to 180 degrees, eg: 90
      */
     //% blockId=mintware_servo180
+    //% parts="mintservo" trackArgs=0
     //% block="servo 180° at %pin to %angle °"
     //% pin.defl=MintPin.P0
     //% angle.min=0 angle.max=180 angle.defl=90
     //% group="Servos" weight=100
     export function servo180(pin: MintPin, angle: number): void {
         angle = Math.constrain(angle, 0, 180)
+        pins.servoSetContinuous(toPin(pin), false)
         pins.servoWritePin(toPin(pin), angle)
     }
 
@@ -67,6 +69,7 @@ namespace mintware {
      * @param speed -100 (full reverse) to 100 (full forward), 0 = stop, eg: 50
      */
     //% blockId=mintware_servo360
+    //% parts="mintservo" trackArgs=0
     //% block="servo 360° at %pin turn with speed %speed"
     //% pin.defl=MintPin.P1
     //% speed.min=-100 speed.max=100 speed.defl=50
@@ -74,9 +77,10 @@ namespace mintware {
     export function servo360(pin: MintPin, speed: number): void {
         speed = Math.constrain(speed, -100, 100)
         if (speed == 0) {
-            stopServo(pin)
+            pins.analogWritePin(toPin(pin), 0)
             return
         }
+        pins.servoSetContinuous(toPin(pin), true)
         pins.servoWritePin(toPin(pin), Math.map(speed, -100, 100, 0, 180))
     }
 
@@ -85,6 +89,7 @@ namespace mintware {
      * @param pin pin the servo is connected to
      */
     //% blockId=mintware_stopservo
+    //% parts="mintservo" trackArgs=0
     //% block="stop servo at %pin"
     //% pin.defl=MintPin.P1
     //% group="Servos" weight=80
