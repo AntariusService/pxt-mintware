@@ -8,4 +8,5 @@
   "mintware.setGroup|block": "utiliser le groupe radio %group",
   "mintware.sendValue|block": "envoyer la valeur %value",
   "mintware.onReceivedValue|block": "quand une valeur est reçue"
+  "mintware.onReceivedValue|handlerParam|value": "valeur"
 }
